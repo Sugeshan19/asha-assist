@@ -11,9 +11,11 @@ export const AuthProvider = ({ children }) => {
   const setAuth = (tokenVal, userVal) => {
     if (tokenVal) {
       localStorage.setItem('token', tokenVal)
+      if (userVal) localStorage.setItem('demo_user', JSON.stringify(userVal))
       api.defaults.headers.common['Authorization'] = `Bearer ${tokenVal}`
     } else {
       localStorage.removeItem('token')
+      localStorage.removeItem('demo_user')
       delete api.defaults.headers.common['Authorization']
     }
     setToken(tokenVal)
@@ -22,6 +24,12 @@ export const AuthProvider = ({ children }) => {
 
   const loadUser = useCallback(async () => {
     if (!token) { setLoading(false); return }
+    if (token === 'demo_token_xyz') {
+      const stored = localStorage.getItem('demo_user')
+      if (stored) setUser(JSON.parse(stored))
+      setLoading(false)
+      return
+    }
     try {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       const { data } = await api.get('/auth/me')
