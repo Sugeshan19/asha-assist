@@ -1,0 +1,24 @@
+{
+  "demoCredentials": {
+    "doctor": { "email": "doctor@asha.com", "password": "Doctor@123" },
+    "asha": { "email": "asha@asha.com", "password": "Asha@1234" },
+    "admin": { "email": "admin@asha.com", "password": "Admin@123" }
+  },
+  "sampleVillages": [
+    "Rampur",
+    "Sundarlal Nagar",
+    "Tikampur",
+    "Govindpur",
+    "Krishnanagar",
+    "Shivpur"
+  ],
+  "sampleDiseases": [
+    "Dengue",
+    "Malaria",
+    "Tuberculosis",
+    "Anemia",
+    "Respiratory Infection",
+    "Typhoid"
+  ],
+  "notes": "Run `npm run seed` inside backend after services start to generate rich sample data."
+}

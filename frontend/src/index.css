@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: #EEF2F7;
+  color: #1A2A44;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
+  50% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(211, 47, 47, 0); }
+}
+
+@keyframes shimmer {
+  from { background-position: -200px 0; }
+  to { background-position: calc(200px + 100%) 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+}
+
+/* --- Utility Classes --- */
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.pulse-high {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* --- OTP Input Boxes --- */
+.otp-input {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #1565C0;
+  border: 2px solid rgba(21, 101, 192, 0.25);
+  border-radius: 12px;
+  background: #F8FAFF;
+  outline: none;
+  transition: all 0.2s ease;
+  caret-color: #1565C0;
+}
+
+.otp-input:focus {
+  border-color: #1565C0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.otp-input.filled {
+  border-color: #1565C0;
+  background: rgba(21, 101, 192, 0.05);
+}
+
+.otp-input.error {
+  border-color: #D32F2F;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* --- Risk Level Indicators --- */
+.risk-high { background: #FFEBEE; color: #C62828; border-color: #FFCDD2; }
+.risk-medium { background: #FFF3E0; color: #E65100; border-color: #FFE0B2; }
+.risk-low { background: #E8F5E9; color: #2E7D32; border-color: #C8E6C9; }
+
+/* --- Gradient Backgrounds --- */
+.gradient-primary {
+  background: linear-gradient(135deg, #0D2145 0%, #1565C0 60%, #1E88E5 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 60%, #43A047 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #E65100 0%, #F57C00 60%, #FFA726 100%);
+}
+
+/* --- Glassmorphism --- */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #EEF2F7; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #90A4AE; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #78909C; }
+
+/* --- Link styles --- */
+a { color: #1565C0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- Print styles --- */
+@media print {
+  .no-print { display: none !important; }
+}
+
+/* --- Status dot animation --- */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* --- Card hover effect --- */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(21, 101, 192, 0.14);
+}
+
+/* --- Truncate text --- */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Number font --- */
+.num { font-variant-numeric: tabular-nums; }
