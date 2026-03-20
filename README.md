@@ -11,7 +11,7 @@
 
 > **Empowering India's 1 million+ frontline ASHA workers with real-time AI-driven health screening, outbreak detection, and risk stratification at village level.**
 
-[🌐 Live Demo](https://Sugeshan19.github.io/asha-assist/) · [📖 Docs](#setup-instructions) · [🐛 Issues](https://github.com/Sugeshan19/asha-assist/issues)
+[🌐 Click here for Live Interactive Demo](https://Sugeshan19.github.io/asha-assist/)
 
 </div>
 
@@ -135,76 +135,11 @@ India's **rural healthcare system** faces a critical gap:
 
 ---
 
-## 🚀 Setup Instructions
+## 🚀 Live Demonstration
 
-### Prerequisites
-- Node.js v18+
-- Python 3.9+
-- MongoDB (local or Atlas URI)
-- Docker & Docker Compose (optional)
+This repository hosts the **Zero-Config Interactive Demo** for the ASHA Assist platform. The entire frontend operates seamlessly in the browser using intelligent offline mock authentication, meaning **no backend server or database is required** to test the features!
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/your-username/asha-assist.git
-cd asha-assist
-```
-
-### 2. Configure Environment
-```bash
-cp .env.example .env
-# Edit .env with your MongoDB URI, JWT secret, etc.
-```
-
-### 3. Install Dependencies
-
-**Backend:**
-```bash
-cd backend
-npm install
-```
-
-**Frontend:**
-```bash
-cd ../frontend
-npm install
-```
-
-**AI Service:**
-```bash
-cd ../ai-service
-pip install -r requirements.txt
-```
-
-### 4. Seed Sample Data
-```bash
-cd backend
-node seed.js
-```
-
-### 5. Start All Services
-
-**Option A – Docker Compose (recommended):**
-```bash
-docker compose up --build
-```
-
-**Option B – Manual:**
-```bash
-# Terminal 1 – Backend
-cd backend && npm run dev
-
-# Terminal 2 – Frontend
-cd frontend && npm run dev
-
-# Terminal 3 – AI Service
-cd ai-service && uvicorn main:app --reload --port 8000
-```
-
-The app will be available at: **http://localhost:5173**
-
----
-
-## 🎮 Demo Flow
+👉 **[Launch ASHA Assist Live Demo](https://Sugeshan19.github.io/asha-assist/)**
 
 ### Test Accounts
 
