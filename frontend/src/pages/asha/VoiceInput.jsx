@@ -29,7 +29,6 @@ export default function VoiceInput() {
   const navigate = useNavigate()
   const [isRecording, setIsRecording] = useState(false)
   const [transcript, setTranscript] = useState('')
-  const [language, setLanguage] = useState('en-IN')
   const [error, setError] = useState('')
   const [symptoms, setSymptoms] = useState([])
 
@@ -45,7 +44,7 @@ export default function VoiceInput() {
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
     const recognition = new SpeechRecognition()
-    recognition.lang = language
+    recognition.lang = 'en-IN'
     recognition.interimResults = true
     recognition.continuous = true
 
@@ -111,23 +110,11 @@ export default function VoiceInput() {
         <CardContent sx={{ p: 3 }}>
           <Typography variant="h6" gutterBottom>Record Symptoms by Voice</Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            Speak symptoms in English or Hindi. Example: "Patient has fever, headache and body pain for two days"
+            Speak symptoms in English. Example: "Patient has fever, headache and body pain for two days"
           </Typography>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center" sx={{ mb: 2 }}>
-            <TextField
-              select
-              label="Language"
-              value={language}
-              onChange={e => setLanguage(e.target.value)}
-              sx={{ minWidth: 180 }}
-            >
-              <option value="en-IN">English (India)</option>
-              <option value="hi-IN">Hindi (India)</option>
-              <option value="ta-IN">Tamil (India)</option>
-              <option value="te-IN">Telugu (India)</option>
-              <option value="ml-IN">Malayalam (India)</option>
-            </TextField>
+
 
             {!isRecording ? (
               <Button
