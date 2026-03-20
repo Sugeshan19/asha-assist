@@ -11,7 +11,7 @@
 
 > **Empowering India's 1 million+ frontline ASHA workers with real-time AI-driven health screening, outbreak detection, and risk stratification at village level.**
 
-[🌐 Live Demo](#demo-flow) · [📖 Docs](#setup-instructions) · [🐛 Issues](https://github.com/your-repo/issues)
+[🌐 Live Demo](https://Sugeshan19.github.io/asha-assist/) · [📖 Docs](#setup-instructions) · [🐛 Issues](https://github.com/Sugeshan19/asha-assist/issues)
 
 </div>
 
